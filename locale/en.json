@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Zhipu web search",
+    "description": "Routes DSH web_search through Zhipu's official web-search MCP, billed to the GLM Coding Plan search quota. Adds a Settings page to store a dedicated API key."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "智谱联网搜索",
+    "description": "让 DSH 的 web_search 走智谱官方联网搜索 MCP,消耗 GLM Coding Plan 套餐搜索额度;设置页可存本插件专用 API Key。"
+  }
+}

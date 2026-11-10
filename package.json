@@ -1,0 +1,39 @@
+{
+  "name": "dsh-web-search-zhipu-mcp",
+  "version": "0.2.1",
+  "description": "DSH web_search 通过智谱官方「联网搜索 MCP」(open.bigmodel.cn web_search_prime)出结果,消耗 GLM Coding Plan 套餐搜索额度,替代内置 DeepSeek 通道;设置页经本机回环路由存/清本插件专用 API Key,解析专用优先、回退共用 ZAI_CODING_CN_API_KEY。",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib/index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-credentials": "^0.1.6-alpha.2 || ^0.2.0-rc.1 || ^0.2.2-alpha.2 || ^0.2.2-rc.1"
+  }
+}

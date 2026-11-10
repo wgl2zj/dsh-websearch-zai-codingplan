@@ -1,0 +1,23 @@
+# dsh-web-search-zhipu-mcp bundle patch — `dsh plugin add` 装入档案时自动应用。
+#
+# 三段接线(与官方 dsh-web-search-deepseek 的替换惯例一致):
+# 1. insert:把本插件登记进装载名单(id 与 name 均写全名,短名会静默装载失败);
+# 2. 整行替换共享 web 服务配置:searchProvider 换成 provider id `zhipu-mcp-search`;
+#    bundle 层 patch 按「last write wins」覆盖基础层的 deepseek-official;
+#    注意这是整行替换,基础层的 fetchProvider: http 必须原样重述,否则抓取断供;
+# 3. 停用内置 DeepSeek 搜索 provider,避免它继续注册竞争同一个工具位。
+# 4. 顺手压住 dsh-web-search-diy 的 loader entry(2026-11-04 遗留:它的 bundles
+#    残留条目曾导致启动 import 失败警告;若日后重装,也不会与本插件抢通道)。
+
+- insert:
+    - id: web-search-zhipu-mcp
+      name: 'dsh-web-search-zhipu-mcp'
+- id: web
+  config:
+    searchProvider: zhipu-mcp-search
+    fetchProvider: http
+- id: web-search-deepseek
+  disabled: true
+- id: web-search-diy
+  disabled: true
+
