@@ -14,12 +14,20 @@
 
 ## 安装
 
+**方式一：npm 一键安装（推荐）**
+
+```sh
+dsh plugin --profile desktop add dsh-web-search-zhipu-mcp
+```
+
+**方式二：从源码安装**
+
 ```sh
 git clone https://github.com/wgl2zj/dsh-websearch-zai-codingplan.git
 dsh plugin --profile desktop add link:<克隆目录绝对路径>
 ```
 
-然后彻底退出并重启 DSH 生效。卸载 / 回滚：
+安装后彻底退出并重启 DSH 生效。卸载 / 回滚：
 
 ```sh
 dsh plugin --profile desktop remove dsh-web-search-zhipu-mcp
